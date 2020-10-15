@@ -1,0 +1,28 @@
+{
+  "name": "morgan-winston-example",
+  "version": "1.0.0",
+  "description": "example usage of morgan and winston to log in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "morgan",
+    "winston",
+    "log",
+    "nodejs"
+  ],
+  "author": "deepak chandola",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
