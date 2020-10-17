@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const winston = require('./config/winston');
-
+const router = require('./router');
 const app = express();
 
 app.use(express.json());
@@ -18,6 +18,8 @@ app.use((req, res, next) => {
   winston.info("query = " + JSON.stringify(req.query));
   next();
 });
+
+app.use('/birds', router);
 // Default Routes
 app.get('/', (req, res) => {
   res.send('Welcome to Express');
@@ -42,7 +44,7 @@ app.get('/error', () => {
 // Your Default Error Handler
 app.use((err, req, res, next) => {
   winston.error('Internal Server Error');
-  res.status(500).send('500. Internal Server Error');
+  res.status(500).send('500. Internal Server Error ' + err.message);
   next();
 });
 
